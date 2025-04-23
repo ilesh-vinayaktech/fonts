@@ -1,0 +1,506 @@
+@font-face {
+  font-family: 'FutureEarth';
+  src: url('https://raw.githubusercontent.com/ilesh-vinayaktech/fonts/refs/heads/main/FutureEarth.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kellion';
+  src: url('https://raw.githubusercontent.com/ilesh-vinayaktech/fonts/refs/heads/main/Kellion-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: radial-gradient(circle at 50% 50%, #111, #000);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.logo-icon svg {
+  filter: drop-shadow(0 0 10px rgba(0, 230, 255, 0.6));
+  animation: pulse 4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+h1 {
+  font-family: 'FutureEarth', sans-serif;
+  font-size: 64px;
+  margin: 15px 0 10px;
+  text-align: center;
+  background: linear-gradient(to right, #00E6FF, #FF3E9A);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+main {
+  padding-top: 20px;
+}
+.glowing-border {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #00E6FF, #FF3E9A, #00E6FF);
+  z-index: 0;
+  animation: borderGlow 3s infinite linear;
+}
+
+@keyframes borderGlow {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.buy-now-btn {
+  display: block;
+  width: 250px;
+  height: 60px;
+  margin: 20px auto;
+  background: linear-gradient(90deg, #00E6FF, #FF3E9A);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-family: 'FutureEarth', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.buy-now-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+.buy-now-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.buy-now-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.futuristic-element {
+  position: absolute;
+  z-index: 0;
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 230, 255, 0.3);
+  top: 100px;
+  right: -150px;
+  animation: rotate 20s linear infinite;
+}
+
+.circle-left {
+  left: -150px;
+  top: 300px;
+  width: 200px;
+  height: 200px;
+  border-color: rgba(255, 62, 154, 0.3);
+  animation-direction: reverse;
+  animation-duration: 15s;
+}
+
+.circle::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #00E6FF;
+  border-radius: 50%;
+  top: 50%;
+  left: -5px;
+  box-shadow: 0 0 10px #00E6FF, 0 0 20px #00E6FF;
+}
+
+.circle-left::before {
+  background: #FF3E9A;
+  box-shadow: 0 0 10px #FF3E9A, 0 0 20px #FF3E9A;
+}
+
+.grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: 0;
+}
+
+.floating-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00E6FF;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Tech wave design */
+.tech-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230a0a0a" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,218.7C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+  background-size: cover;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* Sound wave */
+.wave-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 100px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sound-wave {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="none" stroke="%2300E6FF" stroke-opacity="0.2" stroke-width="1" d="M0,160L40,149.3C80,139,160,117,240,112C320,107,400,117,480,138.7C560,160,640,192,720,208C800,224,880,224,960,192C1040,160,1120,96,1200,74.7C1280,53,1360,75,1400,85.3L1440,96L1440,160L1400,160C1360,160,1280,160,1200,160C1120,160,1040,160,960,160C880,160,800,160,720,160C640,160,560,160,480,160C400,160,320,160,240,160C160,160,80,160,40,160L0,160Z"></path></svg>') repeat-x;
+  background-size: 100% 100%;
+  opacity: 0.3;
+  animation: waveMove 20s linear infinite;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Decorative spheres */
+.decor-sphere {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 230, 255, 0.2), transparent 70%);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.sphere-top-right {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  right: 10%;
+}
+
+.sphere-bottom-left {
+  width: 400px;
+  height: 400px;
+  bottom: -200px;
+  left: 5%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 62, 154, 0.2), transparent 70%);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); opacity: 0.3; }
+  50% { transform: translateY(-20px) translateX(10px); opacity: 0.6; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+}
+
+/* Feature images layout */
+.feature-images {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  margin-left: -200px;
+  gap: 20px;
+}
+
+.feature-image-left,
+.feature-image-right {
+  flex: 0 0 20%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+
+  height: 200px;
+}
+
+.feature-image-left img,
+.feature-image-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.feature-image-left:hover img,
+.feature-image-right:hover img {
+  transform: scale(1.05);
+}
+
+.video-container {
+  flex: 0 0 60%;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* Image grid section */
+.image-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  gap: 20px;
+}
+
+.grid-image {
+  flex: 1;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  height: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-image:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
+
+.grid-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-image span {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'FutureEarth', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.grid-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* Futuristic PNG elements */
+.tech-element {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.tech-circuit-right {
+  width: 400px;
+  height: 600px;
+  right: 0;
+  top: 10%;
+  background: url('https://raw.githubusercontent.com/ilesh-vinayaktech/futuristic-assets/main/circuit-board.png') no-repeat;
+  background-size: contain;
+  opacity: 0.15;
+}
+
+.tech-hud-left {
+  width: 350px;
+  height: 600px;
+  left: 0;
+  top: 25%;
+  background: url('https://raw.githubusercontent.com/ilesh-vinayaktech/futuristic-assets/main/hud-interface.png') no-repeat;
+  background-size: contain;
+  opacity: 0.15;
+}
+
+.tech-circles {
+  width: 600px;
+  height: 600px;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+  background: url('https://raw.githubusercontent.com/ilesh-vinayaktech/futuristic-assets/main/tech-circles.png') no-repeat;
+  background-size: contain;
+  opacity: 0.07;
+}
+
+.tech-waves-bottom {
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+  left: 0;
+  background: url('https://raw.githubusercontent.com/ilesh-vinayaktech/futuristic-assets/main/sound-waves.png') no-repeat bottom center;
+  background-size: cover;
+  opacity: 0.1;
+}
+
+/* Add glow to images */
+.feature-image-left::after,
+.feature-image-right::after {
+  content: none;
+}
+
+/* Add tech corner elements to grid images */
+.grid-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background: url('https://raw.githubusercontent.com/ilesh-vinayaktech/futuristic-assets/main/tech-corner.png') no-repeat;
+  background-size: contain;
+  z-index: 3;
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 42px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  .circle, .circle-left {
+    display: none;
+  }
+  
+  .sphere-top-right, .sphere-bottom-left {
+    opacity: 0.2;
+  }
+  
+  .feature-images {
+    flex-direction: column;
+  }
+  
+  .feature-image-left,
+  .feature-image-right,
+  .video-container {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  
+  .feature-image-left,
+  .feature-image-right {
+    height: 150px;
+  }
+  
+  .image-grid {
+    flex-direction: column;
+  }
+  
+  .grid-image {
+    margin-bottom: 20px;
+  }
+  
+  .tech-element {
+    opacity: 0.05;
+  }
+}
+
+/* Remove grid-image and related styles since grid is removed */
+.grid-image,
+.grid-image img,
+.grid-image span,
+.grid-image::after,
+.grid-image::before {
+  display: none !important;
+} 
